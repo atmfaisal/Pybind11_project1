@@ -7,3 +7,4 @@ int summation(int var1, int var2) {
 PYBIND11_MODULE(test, handle) {
 handle.doc() = "Example of docstring!";
 handle.def("summation", &summation);
+}
