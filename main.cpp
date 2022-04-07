@@ -1,6 +1,7 @@
 #include <pybind11/pybind11.h>
 
-// First Summation Function Test
+// First Function Test
+
 int summation(int var1, int var2) {
     return var1 + var2;
 }
@@ -24,9 +25,17 @@ bool prime_check(int var)
  return is_prime;
 }
 
+// Factorial Function
+long factorial (long n) {
+    if (n>1) 
+        return n * factorial(n-1);
+    else 
+        return 1;
+}
 
 PYBIND11_MODULE(test, handle) {
 handle.doc() = "Example of docstring!";
 handle.def("summation", &summation);
 handle.def("prime_check", &prime_check);
+handle.def("factorial", &factorial);
 }
