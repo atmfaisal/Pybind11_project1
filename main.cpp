@@ -33,9 +33,26 @@ long factorial (long n) {
         return 1;
 }
 
+// String Palindrome
+bool isPalindrome( char str[])
+{
+    int i = 0;
+    int j = strlen(str) - 1;
+
+    while(j>i)
+    {
+        if(str[i++] != str[j--])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 PYBIND11_MODULE(test, handle) {
 handle.doc() = "Example of docstring!";
 handle.def("summation", &summation);
 handle.def("prime_check", &prime_check);
 handle.def("factorial", &factorial);
+handle.def("isPalindrome", &isPalindrome);
 }
